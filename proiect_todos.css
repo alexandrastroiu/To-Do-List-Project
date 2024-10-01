@@ -1,0 +1,238 @@
+body {
+    background-color: whitesmoke;
+}
+
+#title {
+    color: #2326dd;
+    width:100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 80px;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.section {
+    background-color: white;
+    width:550px;
+    min-height:60px;
+    margin:auto;
+    display: block;
+}  
+
+::placeholder {
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.todosheader:focus {
+    box-shadow: 0 0 3px 2px #4488e1a8;
+}
+
+.todosheader{
+    width:100%;
+    height: 60px;
+    display: inline-block;
+    box-shadow: 1px 1px 5px 2px rgba(220, 220, 220, 0.646);
+}
+
+#todos {
+    background-color:white;
+    border: none;
+    width: 82%;
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 1.4em;
+    padding: 16px 16px 16px 16px;
+    margin:1px 1px 1px 1px; 
+}
+
+#todos:focus {
+    outline:none;
+}
+
+#button1 {
+    background-color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    font-size: 22px;
+    text-align: center;
+    color: #949494;
+    transform: rotate(90deg);
+    visibility: hidden;
+}
+
+#button1:focus { 
+    color: rgba(38, 36, 36, 0.832);
+}
+
+.todoList {
+   background-color: white;
+   margin: 0;
+   list-style: none;
+   padding-inline-start: 0;
+}
+
+.todoList li {
+    display: block;
+    background-color: white;
+    margin:1px 1px 2.5px 1px;
+    height:50px;
+    border-top: 1px solid gainsboro;
+    padding: 5px 5px;
+}
+
+
+label.completed {
+    font-weight: 100;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #949494;
+    text-decoration-line: line-through;
+    background-color: white;
+}
+
+label.normal {
+    font-weight: 100;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #484848;
+    background-color: white;
+}
+
+.todoList li:hover button.delete{
+   display: inline-block;
+}
+
+button.delete {
+    background-color: white;
+    border: none;
+    color: #949494;
+    font-size: 18px;
+    font-weight: 900;
+    width: 40px;
+    height: 40px;
+    float: right;
+    display: none;
+    transition: color 0.2s ease-out;
+}
+
+button.delete::after {
+     content: "\2715";
+}
+
+button.delete:hover{
+    color: #b10f148b;
+}
+
+button.delete:active{
+    box-shadow: 0 0 3px 2px #4488e1a8;
+}
+
+input.Mycheckbox {
+    display: none;
+}
+
+span.default {
+     display: inline-block;
+     margin-top: 10px;
+     margin-left: 5px;
+     margin-right: 17px;
+     width: 30px;
+     height: 30px;
+     background-color: white;
+     border: solid grey 1px;
+     border-radius: 50%;
+}
+
+span {
+    cursor: default;
+}
+
+span.checked {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 17px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: solid rgba(13, 150, 75, 0.658) 1.5px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+span.checked::after{
+    content: "\2713";
+    font-size: 25px;
+    color:rgba(13, 150, 75, 0.658);
+    font-weight: 400;
+}
+
+.footer {
+    background-color: white;
+    height:20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding: 10px 15px;
+    border-top: 1px solid #e6e6e6;
+    display: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+}
+
+.footer button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.count{
+    float: left;
+}
+
+#clearButton {
+    float: right;
+    visibility: hidden;
+}
+
+#allButton:hover {
+    box-shadow: 0 0 1px 1px #3970e8a8;
+}
+
+#allButton:focus {
+    box-shadow: 0 0 2px 3px #2f52dda8;
+}
+
+#activeButton:hover {
+    box-shadow: 0 0 1px 1px #3970e8a8;
+}
+
+#activeButton:focus {
+    box-shadow: 0 0 2px 3px #2f52dda8;
+}
+
+.filter {
+    box-shadow: 0 0 1px 1px #3970e8a8;
+}
+
+#completedButton:hover {
+    box-shadow: 0 0 1px 1px #3970e8a8;
+}
+
+#completedButton:focus {
+    box-shadow: 0 0 2px 3px #2f52dda8;
+}
+
+#clearButton:hover {
+    text-decoration: underline;
+}
+
+#clearButton:focus {
+    box-shadow: 0 0 1px 2px #2f52dda8;
+}
