@@ -308,7 +308,7 @@ function createTask(event)
        const newLabel = document.createElement("label");
        newLabel.textContent = inputText;
        newLabel.classList.add("normal");
-
+     
        const newButton = document.createElement("button");
        newButton.classList.add("delete");
        newButton.addEventListener("click", removeTask);
@@ -324,10 +324,35 @@ function createTask(event)
        newTask.appendChild(newDiv);
        myList.appendChild(newTask);
 
-       inputElement.value = "";
-       counterNumber += 1;
-       updateCounter();
-       updateFooter();
-       showFirstButton();
+       newLabel.addEventListener("dblclick", (event) => {
+       const label = event.target;
+       newSpan.style.visibility = "hidden";
+       const newInput = document.createElement("input");
+       newInput.type = "text";
+       newInput.value = label.textContent;
+       newInput.classList.add("normal");
+       newInput.style.border = "none";
+       newInput.style.outline = "none"
+       label.replaceWith(newInput);
+       newInput.addEventListener("keydown", (event) => {
+          if(event.key === "Enter")
+          {
+               label.textContent = newInput.value;
+               newInput.replaceWith(label);
+               newSpan.style.visibility = "visible";
+          }
+        });
+       newInput.addEventListener("mouseout", (event) => {
+          label.textContent = newInput.value;
+          newInput.replaceWith(label);
+          newSpan.style.visibility = "visible";
+        });
+      });
+
+      inputElement.value = "";
+      counterNumber += 1;
+      updateCounter();
+      updateFooter();
+      showFirstButton();
     }
 }
