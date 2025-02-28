@@ -12,6 +12,7 @@ The project is inspired by [this site](https://todomvc.com/examples/javascript-e
 * Mark a task as completed
 * Uncheck a task
 * Delete a task from the to-do list
+* Edit a task with a double click
 * Select all tasks and mark them as completed
 * Select all tasks and uncheck them
 * Filter tasks: all tasks, active tasks, completed tasks
