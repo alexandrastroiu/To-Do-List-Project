@@ -377,6 +377,14 @@ function createTask(event) {
       });
     });
 
+    tasksData.push({
+      id: newId,
+      text: inputText,
+      completed: false
+    });
+    
+    saveData(tasksData);
+
     inputElement.value = "";
     counterNumber += 1;
     updateCounter();
