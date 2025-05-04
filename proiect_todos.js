@@ -232,6 +232,13 @@ function checkTask(event) {
     updateCounter();
     showButton();
 
+    const index = findDataIndex(currentTask.parentElement);
+    
+    if (index != -1) {
+      tasksData[index].completed = true;
+      saveData(tasksData);
+    }
+
     if (activeButton.classList.contains("filter")) {
       showActive();
     }
@@ -244,6 +251,13 @@ function checkTask(event) {
     counterNumber += 1;
     updateCounter();
     showButton();
+
+    const index = findDataIndex(currentTask.parentElement);
+    
+    if (index != -1) {
+      tasksData[index].completed = false;
+      saveData(tasksData);
+    }
 
     if (completedTasksButton.classList.contains("filter")) {
       showCompleted();
