@@ -11,7 +11,7 @@ completedTasksButton.addEventListener("click", showCompleted);
 completedButton.addEventListener("click", removeCompleted);
 firstButton.addEventListener("click", toggleFirstButton);
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   displayTasks();
 });
 
@@ -40,7 +40,7 @@ function toggleFirstButton() {
       }
 
       const index = findDataIndex(taskList[i]);
-    
+
       if (index != -1) {
         tasksData[index].completed = false;
         saveData(tasksData);
@@ -65,7 +65,7 @@ function toggleFirstButton() {
       }
 
       const index = findDataIndex(taskList[i]);
-    
+
       if (index != -1) {
         tasksData[index].completed = true;
         saveData(tasksData);
@@ -98,7 +98,7 @@ function removeCompleted() {
     if (currentSpan.classList.contains("checked")) {
       taskList[i].remove();
       const index = findDataIndex(taskList[i]);
-    
+
       if (index != -1) {
         tasksData.splice(index, 1);
         saveData(tasksData);
@@ -258,7 +258,7 @@ function checkTask(event) {
     showButton();
 
     const index = findDataIndex(currentTask.parentElement);
-    
+
     if (index != -1) {
       tasksData[index].completed = true;
       saveData(tasksData);
@@ -278,7 +278,7 @@ function checkTask(event) {
     showButton();
 
     const index = findDataIndex(currentTask.parentElement);
-    
+
     if (index != -1) {
       tasksData[index].completed = false;
       saveData(tasksData);
@@ -336,7 +336,7 @@ function removeTask(event) {
   showFirstButton();
 
   const index = findDataIndex(parentLi);
-    
+
   if (index != -1) {
     tasksData.splice(index, 1);
     saveData(tasksData);
@@ -385,7 +385,7 @@ function createTask(event) {
     newCheckbox.type = "checkbox";
     newCheckbox.classList.add("Mycheckbox");
 
-    newTask.setAttribute('data-id', newId);
+    newTask.setAttribute("data-id", newId);
 
     newDiv.appendChild(newCheckbox);
     newDiv.appendChild(newSpan);
@@ -416,7 +416,7 @@ function createTask(event) {
           newSpan.style.visibility = "visible";
 
           const index = findDataIndex(newTask);
-    
+
           if (index != -1) {
             tasksData[index].text = newInput.value;
             saveData(tasksData);
@@ -429,7 +429,7 @@ function createTask(event) {
         newSpan.style.visibility = "visible";
 
         const index = findDataIndex(newTask);
-  
+
         if (index != -1) {
           tasksData[index].text = newInput.value;
           saveData(tasksData);
@@ -440,9 +440,9 @@ function createTask(event) {
     tasksData.push({
       id: newId,
       text: inputText,
-      completed: false
+      completed: false,
     });
-    
+
     saveData(tasksData);
 
     inputElement.value = "";
@@ -454,16 +454,16 @@ function createTask(event) {
 }
 
 function loadData() {
-  const data = localStorage.getItem('tasksData');
+  const data = localStorage.getItem("tasksData");
   return data ? JSON.parse(data) : [];
 }
 
 function saveData(tasks) {
-  localStorage.setItem('tasksData', JSON.stringify(tasks));
+  localStorage.setItem("tasksData", JSON.stringify(tasks));
 }
 
 function findDataIndex(task) {
-  const taskId = Number(task.getAttribute('data-id'));
+  const taskId = Number(task.getAttribute("data-id"));
   const data = loadData();
   const isFound = (task) => task.id === taskId;
 
@@ -476,7 +476,7 @@ function displayTasks() {
   toDoList.innerHTML = "";
   let remainingTasks = 0;
 
-  data.forEach(taskData => {
+  data.forEach((taskData) => {
     const inputText = inputElement.value;
     const myList = document.querySelector("ul.todoList");
     const newTask = document.createElement("li");
@@ -486,11 +486,10 @@ function displayTasks() {
 
     if (taskData.completed) {
       newSpan.classList.add("checked");
-    }
-    else {
+    } else {
       newSpan.classList.add("default");
     }
-    
+
     newSpan.addEventListener("click", checkTask);
     newSpan.setAttribute("tabindex", "0");
     newSpan.addEventListener("focusin", highlightTask);
@@ -501,8 +500,7 @@ function displayTasks() {
 
     if (taskData.completed) {
       newLabel.classList.add("completed");
-    }
-    else {
+    } else {
       newLabel.classList.add("normal");
       remainingTasks += 1;
     }
@@ -515,7 +513,7 @@ function displayTasks() {
     newCheckbox.type = "checkbox";
     newCheckbox.classList.add("Mycheckbox");
 
-    newTask.setAttribute('data-id', newId);
+    newTask.setAttribute("data-id", newId);
 
     newDiv.appendChild(newCheckbox);
     newDiv.appendChild(newSpan);
@@ -546,7 +544,7 @@ function displayTasks() {
           newSpan.style.visibility = "visible";
 
           const index = findDataIndex(newTask);
-    
+
           if (index != -1) {
             tasksData[index].text = newInput.value;
             saveData(tasksData);
@@ -559,14 +557,14 @@ function displayTasks() {
         newSpan.style.visibility = "visible";
 
         const index = findDataIndex(newTask);
-  
+
         if (index != -1) {
           tasksData[index].text = newInput.value;
           saveData(tasksData);
         }
       });
     });
-  })
+  });
 
   inputElement.value = "";
   counterNumber = remainingTasks;
