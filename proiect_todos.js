@@ -79,6 +79,13 @@ function removeCompleted() {
 
     if (currentSpan.classList.contains("checked")) {
       taskList[i].remove();
+      const index = findDataIndex(taskList[i]);
+    
+      if (index != -1) {
+        tasksData.splice(index, 1);
+        saveData(tasksData);
+      }
+
       updateFooter();
       showButton();
       showFirstButton();
