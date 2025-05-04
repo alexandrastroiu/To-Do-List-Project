@@ -389,3 +389,7 @@ function loadData() {
   const data = localStorage.getItem('tasksData');
   return data ? JSON.parse(data) : [];
 }
+
+function saveData(tasks) {
+  localStorage.setItem('tasksData', JSON.stringify(tasks));
+}
