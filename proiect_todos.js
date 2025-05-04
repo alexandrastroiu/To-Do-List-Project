@@ -375,6 +375,13 @@ function createTask(event) {
         newInput.replaceWith(label);
         newSpan.style.visibility = "visible";
       });
+
+      const index = findDataIndex(event.target.parentElement.parentElement);
+      
+      if (index != -1) {
+        tasksData[index].text = newInput.value;
+        saveData(tasksData);
+      }
     });
 
     tasksData.push({
@@ -407,5 +414,5 @@ function findDataIndex(task) {
   const data = loadData();
   const isFound = (task) => task.id === taskId;
 
-  return data.findIndex();
+  return data.findIndex(isFound);
 }
