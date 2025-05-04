@@ -296,6 +296,13 @@ function removeTask(event) {
   showButton();
   showFirstButton();
 
+  const index = findDataIndex(parentLi);
+    
+  if (index != -1) {
+    tasksData.splice(index, 1);
+    saveData(tasksData);
+  }
+
   if (span.classList.contains("default")) {
     counterNumber -= 1;
     updateCounter();
