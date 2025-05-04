@@ -11,6 +11,10 @@ completedTasksButton.addEventListener("click", showCompleted);
 completedButton.addEventListener("click", removeCompleted);
 firstButton.addEventListener("click", toggleFirstButton);
 
+document.addEventListener('DOMContentLoaded', () => {
+  displayTasks();
+});
+
 /**
  * The `toggleFirstButton` function toggles the first button placed in the to-do list header.
  * The button checks all the tasks in the to-do list when it is clicked or unchecks them if it was previously clicked once.
@@ -470,6 +474,7 @@ function displayTasks() {
   const data = loadData();
   const toDoList = document.querySelector("ul.todoList");
   toDoList.innerHTML = "";
+  let remainingTasks = 0;
 
   data.forEach(taskData => {
     const inputText = inputElement.value;
@@ -499,6 +504,7 @@ function displayTasks() {
     }
     else {
       newLabel.classList.add("normal");
+      remainingTasks += 1;
     }
 
     const newButton = document.createElement("button");
@@ -563,8 +569,9 @@ function displayTasks() {
   })
 
   inputElement.value = "";
-  counterNumber = tasksData.length;
+  counterNumber = remainingTasks;
   updateCounter();
   updateFooter();
   showFirstButton();
+  showButton();
 }
