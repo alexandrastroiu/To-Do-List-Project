@@ -3,6 +3,7 @@ const completedButton = document.getElementById("clearButton");
 const activeButton = document.getElementById("activeButton");
 const completedTasksButton = document.getElementById("completedButton");
 const firstButton = document.getElementById("button1");
+const tasksData = loadData();
 
 activeButton.addEventListener("click", showActive);
 allButton.addEventListener("click", showAll);
@@ -382,4 +383,9 @@ function createTask(event) {
     updateFooter();
     showFirstButton();
   }
+}
+
+function loadData() {
+  const data = localStorage.getItem('tasksData');
+  return data ? JSON.parse(data) : [];
 }
