@@ -34,6 +34,13 @@ function toggleFirstButton() {
         updateCounter();
         showButton();
       }
+
+      const index = findDataIndex(taskList[i]);
+    
+      if (index != -1) {
+        tasksData[index].completed = false;
+        saveData(tasksData);
+      }
     }
   } else {
     firstButton.classList.add("clicked");
@@ -51,6 +58,13 @@ function toggleFirstButton() {
         counterNumber -= 1;
         updateCounter();
         showButton();
+      }
+
+      const index = findDataIndex(taskList[i]);
+    
+      if (index != -1) {
+        tasksData[index].completed = true;
+        saveData(tasksData);
       }
     }
   }
