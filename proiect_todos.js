@@ -318,6 +318,7 @@ function createTask(event) {
     const newTask = document.createElement("li");
     const newDiv = document.createElement("div");
     const newSpan = document.createElement("span");
+    const newId = Date.now();
 
     newSpan.classList.add("default");
     newSpan.addEventListener("click", checkTask);
@@ -336,6 +337,8 @@ function createTask(event) {
     const newCheckbox = document.createElement("input");
     newCheckbox.type = "checkbox";
     newCheckbox.classList.add("Mycheckbox");
+
+    newTask.setAttribute('data-id', newId);
 
     newDiv.appendChild(newCheckbox);
     newDiv.appendChild(newSpan);
