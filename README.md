@@ -35,3 +35,8 @@ The project is inspired by [this site](https://todomvc.com/examples/javascript-e
 `cd To-Do-List-Project` 
 
 3. Open the html file in your browser.
+
+## Planned Features
+
+- [ ] Add JSDoc comments for all functions and fix existing JSDoc comments.
+- [ ] Use responsive CSS.
