@@ -401,3 +401,11 @@ function loadData() {
 function saveData(tasks) {
   localStorage.setItem('tasksData', JSON.stringify(tasks));
 }
+
+function findDataIndex(task) {
+  const taskId = Number(task.getAttribute('data-id'));
+  const data = loadData();
+  const isFound = (task) => task.id === taskId;
+
+  return data.findIndex();
+}
