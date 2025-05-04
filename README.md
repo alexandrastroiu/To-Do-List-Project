@@ -1,7 +1,7 @@
 # To-Do List Project
 
 ## Project Overview
-A dynamic To-Do list project: users can add, remove, edit, check and filter tasks.
+A dynamic To-Do list: users can add, remove, edit, check and filter tasks.
 
 The project is inspired by [this site](https://todomvc.com/examples/javascript-es5/dist/#/).
 
@@ -18,6 +18,7 @@ The project is inspired by [this site](https://todomvc.com/examples/javascript-e
 * Filter tasks: all tasks, active tasks, completed tasks
 * Clear all completed tasks from the to-do list
 * View the number of unfinished tasks
+* Persistent data: tasks are saved in the browser's 'Local storage' and remain unchanged after refreshing or closing the browser
 
 ## Technologies Used
 * HTML
