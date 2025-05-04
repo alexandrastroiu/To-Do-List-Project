@@ -465,3 +465,106 @@ function findDataIndex(task) {
 
   return data.findIndex(isFound);
 }
+
+function displayTasks() {
+  const data = loadData();
+  const toDoList = document.querySelector("ul.todoList");
+  toDoList.innerHTML = "";
+
+  data.forEach(taskData => {
+    const inputText = inputElement.value;
+    const myList = document.querySelector("ul.todoList");
+    const newTask = document.createElement("li");
+    const newDiv = document.createElement("div");
+    const newSpan = document.createElement("span");
+    const newId = taskData.id;
+
+    if (taskData.completed) {
+      newSpan.classList.add("checked");
+    }
+    else {
+      newSpan.classList.add("default");
+    }
+    
+    newSpan.addEventListener("click", checkTask);
+    newSpan.setAttribute("tabindex", "0");
+    newSpan.addEventListener("focusin", highlightTask);
+    newSpan.addEventListener("focusout", normalTask);
+
+    const newLabel = document.createElement("label");
+    newLabel.textContent = taskData.text;
+
+    if (taskData.completed) {
+      newLabel.classList.add("completed");
+    }
+    else {
+      newLabel.classList.add("normal");
+    }
+
+    const newButton = document.createElement("button");
+    newButton.classList.add("delete");
+    newButton.addEventListener("click", removeTask);
+
+    const newCheckbox = document.createElement("input");
+    newCheckbox.type = "checkbox";
+    newCheckbox.classList.add("Mycheckbox");
+
+    newTask.setAttribute('data-id', newId);
+
+    newDiv.appendChild(newCheckbox);
+    newDiv.appendChild(newSpan);
+    newDiv.appendChild(newLabel);
+    newDiv.appendChild(newButton);
+    newTask.appendChild(newDiv);
+    myList.appendChild(newTask);
+
+    /**
+     * When the user double-clicks on the text (label) of a task in the to-do list, the text of the task can be modified.
+     */
+    newLabel.addEventListener("dblclick", (event) => {
+      const label = event.target;
+      newSpan.style.visibility = "hidden";
+
+      const newInput = document.createElement("input");
+      newInput.type = "text";
+      newInput.value = label.textContent;
+      newInput.classList.add("normal");
+      newInput.style.border = "none";
+      newInput.style.outline = "none";
+
+      label.replaceWith(newInput);
+      newInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          label.textContent = newInput.value;
+          newInput.replaceWith(label);
+          newSpan.style.visibility = "visible";
+
+          const index = findDataIndex(newTask);
+    
+          if (index != -1) {
+            tasksData[index].text = newInput.value;
+            saveData(tasksData);
+          }
+        }
+      });
+      newInput.addEventListener("mouseout", (event) => {
+        label.textContent = newInput.value;
+        newInput.replaceWith(label);
+        newSpan.style.visibility = "visible";
+
+        const index = findDataIndex(newTask);
+  
+        if (index != -1) {
+          tasksData[index].text = newInput.value;
+          saveData(tasksData);
+        }
+      });
+    });
+  })
+
+  inputElement.value = "";
+  counterNumber = tasksData.length;
+  updateCounter();
+  updateFooter();
+  showFirstButton();
+}
