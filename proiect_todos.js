@@ -368,20 +368,27 @@ function createTask(event) {
           label.textContent = newInput.value;
           newInput.replaceWith(label);
           newSpan.style.visibility = "visible";
+
+          const index = findDataIndex(newTask);
+    
+          if (index != -1) {
+            tasksData[index].text = newInput.value;
+            saveData(tasksData);
+          }
         }
       });
       newInput.addEventListener("mouseout", (event) => {
         label.textContent = newInput.value;
         newInput.replaceWith(label);
         newSpan.style.visibility = "visible";
-      });
 
-      const index = findDataIndex(event.target.parentElement.parentElement);
-      
-      if (index != -1) {
-        tasksData[index].text = newInput.value;
-        saveData(tasksData);
-      }
+        const index = findDataIndex(newTask);
+  
+        if (index != -1) {
+          tasksData[index].text = newInput.value;
+          saveData(tasksData);
+        }
+      });
     });
 
     tasksData.push({
