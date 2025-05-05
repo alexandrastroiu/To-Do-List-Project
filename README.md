@@ -28,11 +28,15 @@ The project is inspired by [this site](https://todomvc.com/examples/javascript-e
 ## Usage
 1. Clone the repository: 
 
-`git clone https://github.com/alexandrastroiu/To-Do-List-Project.git`
+```
+git clone https://github.com/alexandrastroiu/To-Do-List-Project.git
+```
 
 2. Navigate to the project directory:
 
-`cd To-Do-List-Project` 
+```
+cd To-Do-List-Project
+```
 
 3. Open the html file in your browser.
 
