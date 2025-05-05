@@ -38,5 +38,5 @@ The project is inspired by [this site](https://todomvc.com/examples/javascript-e
 
 ## Planned Features
 
-- [ ] Add JSDoc comments for all functions and fix existing JSDoc comments.
+- [x] Add JSDoc comments for all functions and fix existing JSDoc comments.
 - [ ] Use responsive CSS.
