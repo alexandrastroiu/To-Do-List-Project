@@ -3,6 +3,7 @@
 ## Project Overview
 A dynamic To-Do list: users can add, remove, edit, check and filter tasks.
 
+This project demonstrates DOM manipulation, handling events and using local storage.
 The project is inspired by [this site](https://todomvc.com/examples/javascript-es5/dist/#/).
 
 ![Website photo](images/Screenshot%20(191).png)
@@ -28,15 +29,23 @@ The project is inspired by [this site](https://todomvc.com/examples/javascript-e
 ## Usage
 1. Clone the repository: 
 
-`git clone https://github.com/alexandrastroiu/To-Do-List-Project.git`
+```
+git clone https://github.com/alexandrastroiu/To-Do-List-Project.git
+```
 
 2. Navigate to the project directory:
 
-`cd To-Do-List-Project` 
+```
+cd To-Do-List-Project
+```
 
 3. Open the html file in your browser.
 
+## Create your own To-Do list:
+
+[https://alexandrastroiu.github.io/To-Do-List-Project/proiect_todos.html](https://alexandrastroiu.github.io/To-Do-List-Project/proiect_todos.html)
+
 ## Planned Features
 
-- [ ] Add JSDoc comments for all functions and fix existing JSDoc comments.
+- [x] Add JSDoc comments for all functions and fix existing JSDoc comments.
 - [ ] Use responsive CSS.
