@@ -3,6 +3,7 @@
 ## Project Overview
 A dynamic To-Do list: users can add, remove, edit, check and filter tasks.
 
+This project demonstrates DOM manipulation, handling events and using local storage.
 The project is inspired by [this site](https://todomvc.com/examples/javascript-es5/dist/#/).
 
 ![Website photo](images/Screenshot%20(191).png)
@@ -39,6 +40,10 @@ cd To-Do-List-Project
 ```
 
 3. Open the html file in your browser.
+
+## Create your own To-Do list:
+
+[https://alexandrastroiu.github.io/To-Do-List-Project/proiect_todos.html](https://alexandrastroiu.github.io/To-Do-List-Project/proiect_todos.html)
 
 ## Planned Features
 
