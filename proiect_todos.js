@@ -76,7 +76,7 @@ function toggleFirstButton() {
 
 /**
  * The `selectFilter` function indicates the active filter between `All`, `Active` or `Completed` by removing and adding the `filter` class to the chosen element.
- * @param {*} filter - the element that is the new filter
+ * @param {HTMLElement} filter - The element that is the new filter.
  */
 function selectFilter(filter) {
   allButton.classList.remove("filter");
@@ -194,7 +194,7 @@ function showFirstButton() {
 
 /**
  * The `highlightTask` function highlights the task in the to-do list when its checkbox is clicked.
- * @param {*} event
+ * @param {*} event - The event.
  */
 function highlightTask(event) {
   let currentSpan = event.target;
@@ -205,7 +205,7 @@ function highlightTask(event) {
 
 /**
  * The `normalTask` function removes the highlight from the task in the to-do list when the task is no longer in focus (the user clicks outside its checkbox).
- * @param {*} event
+ * @param {*} event - The event.
  */
 function normalTask(event) {
   let currentSpan = event.target;
@@ -216,7 +216,7 @@ function normalTask(event) {
 
 /**
  * The `highlightTodosHeader` function highlights the to-do list header when the user wants to insert a new task (the input element is in focus).
- * @param {*} event
+ * @param {*} event - The event.
  */
 function highlightTodosHeader(event) {
   let input = event.target;
@@ -227,7 +227,7 @@ function highlightTodosHeader(event) {
 
 /**
  * The `normalTodosHeader` function removes the highlight from the to-do list header when the input element loses focus (the user clicks outside the input element in the to-do list header).
- * @param {*} event
+ * @param {*} event -  The event.
  */
 function normalTodosHeader(event) {
   let input = event.target;
@@ -240,7 +240,7 @@ function normalTodosHeader(event) {
  * The `checkTask` function toggles the state of the task (checked or unchecked) when the its checkbox is clicked.
  * The function  updates the task counter and the visibility of the `Clear completed` button.
  * It also checks if any filters are applied (`Active` or `Completed`) and updates what tasks are shown accordingly.
- * @param {*} event
+ * @param {*} event - The event.
  */
 function checkTask(event) {
   let currentButton = event.target;
@@ -322,7 +322,7 @@ function updateFooter() {
 /**
  * The `removeTask` function removes the current task when the delete button is clicked.
  * The function also updates the to-do list footer, two buttons and the task counter after the removal.
- * @param {*} event
+ * @param {*} event - The event.
  */
 function removeTask(event) {
   const button = event.target;
@@ -356,7 +356,7 @@ inputElement.addEventListener("focusout", normalTodosHeader);
 /**
  * The `createTask` function creates a new task in the to-do list when the `Enter` key is pressed after the user inserted text in the input element in the to-do list header.
  * The function also updates the task counter, the task counter text, the footer and the visibility of the first button (the button in the to-do list header).
- * @param {*} event
+ * @param {*} event - The event.
  */
 function createTask(event) {
   if (event.key === "Enter") {
@@ -453,15 +453,29 @@ function createTask(event) {
   }
 }
 
+/**
+ * The `loadData` function gets the `tasksData` Storage object from the browser's Local storage.
+ * @returns {Object[]|[]} An array of Javascript objects that represents the tasks in the to-do list, constructed after parsing if there is stored data in the browser's Local storage, otherwise an empty array.
+ */
 function loadData() {
   const data = localStorage.getItem("tasksData");
   return data ? JSON.parse(data) : [];
 }
 
+/**
+ * The `saveData` function stores data in the browser's Local storage.
+ * @param {Object[]} tasks - An array of Javascript objects that represents the tasks in the to-do list.
+ */
 function saveData(tasks) {
   localStorage.setItem("tasksData", JSON.stringify(tasks));
 }
 
+/**
+ * The `findDataIndex` function returns the index of the first element in the array of Javascript objects that represents the task data stored in the browser's Local storage which corresponds to the selected task in the to-do list.
+ * By using the `findDataIndex` function the modifications made in the to-do list are also reflected on the data stored in the Local storage.
+ * @param {HTMLElement} task - The HTML element that represents a task in the to-do list.
+ * @returns {number} The index of the first element in the `data` array of Javascript objects that has the same value for the id attribute as the value for the `data-id` attribute of the HTML element that represents a task in the to-do list.
+ */
 function findDataIndex(task) {
   const taskId = Number(task.getAttribute("data-id"));
   const data = loadData();
@@ -470,6 +484,11 @@ function findDataIndex(task) {
   return data.findIndex(isFound);
 }
 
+/**
+ * The `displayTasks` function loads the data stored in the browser's Local storage and clears the existing to-do list in order to display the tasks in the to-do list as they are in the Local storage data.
+ * The function also updates the tasks counter, the visibility of the footer and two buttons.
+ * By using the `displayTasks` function the tasks in the to-do list can be persistent, the data remains even after refreshing the page or closing the browser.
+ */
 function displayTasks() {
   const data = loadData();
   const toDoList = document.querySelector("ul.todoList");
