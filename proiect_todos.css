@@ -75,7 +75,7 @@ button {
     visibility: hidden;
 }
 
-#button1:focus { 
+#button1.clicked { 
     color: rgba(38, 36, 36, 0.832);
 }
 
