@@ -113,6 +113,10 @@ button {
     background-color: white;
 }
 
+.todoList li.editing button.delete {
+    display: none !important;
+}
+
 .todoList li:hover button.delete{
    display: inline-block;
 }
