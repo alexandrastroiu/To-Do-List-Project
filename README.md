@@ -43,9 +43,4 @@ cd To-Do-List-Project
 
 ## Create your own To-Do list:
 
-[https://alexandrastroiu.github.io/To-Do-List-Project/proiect_todos.html](https://alexandrastroiu.github.io/To-Do-List-Project/proiect_todos.html)
-
-## Planned Features
-
-- [x] Add JSDoc comments for all functions and fix existing JSDoc comments.
-- [ ] Use responsive CSS.
+[https://alexandrastroiu.github.io/To-Do-List-Project/](https://alexandrastroiu.github.io/To-Do-List-Project/)
