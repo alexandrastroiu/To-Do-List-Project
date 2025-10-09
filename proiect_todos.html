@@ -1,28 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo list</title>
-    <link rel="stylesheet" href="proiect_todos.css">
-</head>
-<body>
+    <link rel="stylesheet" href="proiect_todos.css" />
+  </head>
+  <body>
     <h1 id="title">todos</h1>
     <div class="section">
-            <div tabindex="0" class="todosheader">
-              <button id="button1">❯</button>
-              <input type="text" id="todos" name="todos" placeholder="What needs to be done?">
-            </div>
-            <ul class="todoList">
-            </ul> 
-            <footer class="footer">
-                <span class="count">0</span>
-                <button id="allButton" class="filter">All</button>
-                <button id="activeButton">Active</button>
-                <button id="completedButton">Completed</button>
-                <button id="clearButton">Clear completed</button>
-            </footer>
+      <div tabindex="0" class="todosheader">
+        <button id="button1">❯</button>
+        <input
+          type="text"
+          id="todos"
+          name="todos"
+          placeholder="What needs to be done?"
+        />
+      </div>
+      <ul class="todoList"></ul>
+      <footer class="footer">
+        <span class="count">0</span>
+        <button id="allButton" class="filter">All</button>
+        <button id="activeButton">Active</button>
+        <button id="completedButton">Completed</button>
+        <button id="clearButton">Clear completed</button>
+      </footer>
     </div>
-    <script src = "proiect_todos.js"></script>
-</body> 
+    <script src="proiect_todos.js"></script>
+  </body>
 </html>

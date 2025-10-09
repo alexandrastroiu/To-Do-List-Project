@@ -1,250 +1,254 @@
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 #title {
-    color: #2326dd;
-    width:100%;
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-    font-size: clamp(2.5rem, 10vw, 5rem);
-    font-weight: 100;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+  color: #2326dd;
+  width: 100%;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 100;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
 .section {
-    background-color: white;
-    width:550px;
-    min-height:  3.75rem;
-    margin:auto;
-    display: block;
-}  
+  background-color: white;
+  width: 550px;
+  min-height: 3.75rem;
+  margin: auto;
+  display: block;
+}
 
 ::placeholder {
-    font-style: italic;
-    opacity: 0.7;
+  font-style: italic;
+  opacity: 0.7;
 }
 
 .todosheader:focus {
-    box-shadow: 0 0 3px 2px #4488e1a8;
+  box-shadow: 0 0 3px 2px #4488e1a8;
 }
 
-.todosheader{
-    width:100%;
-    height: 3.75rem;
-    display: inline-block;
-    box-shadow: 1px 1px 5px 2px rgba(220, 220, 220, 0.646);
+.todosheader {
+  width: 100%;
+  height: 3.75rem;
+  display: inline-block;
+  box-shadow: 1px 1px 5px 2px rgba(220, 220, 220, 0.646);
 }
 
 #todos {
-    background-color:white;
-    border: none;
-    width: 82%;
-    height: 1.25rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
-    font-size: clamp(1rem, 2vw, 2.5rem);
-    line-height: 1.4em;
-    padding: 1rem 1rem 1rem 1rem;
-    margin: 0.06rem 0.06rem 0.06rem 0.06rem;
+  background-color: white;
+  border: none;
+  width: 82%;
+  height: 1.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  line-height: 1.4em;
+  padding: 1rem 1rem 1rem 1rem;
+  margin: 0.06rem 0.06rem 0.06rem 0.06rem;
 }
 
 #todos:focus {
-    outline:none;
+  outline: none;
 }
 
 button {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 #button1 {
-    background-color: white;
-    border: none;
-    width: 50px;
-    height: 3.12rem;
-    margin: 0;
-    font-size: 1.3rem;
-    text-align: center;
-    color: #949494;
-    transform: rotate(90deg);
-    visibility: hidden;
+  background-color: white;
+  border: none;
+  width: 50px;
+  height: 3.12rem;
+  margin: 0;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #949494;
+  transform: rotate(90deg);
+  visibility: hidden;
 }
 
-#button1.clicked { 
-    color: rgba(38, 36, 36, 0.832);
+#button1.clicked {
+  color: rgba(38, 36, 36, 0.832);
 }
 
 .todoList {
-   background-color: white;
-   margin: 0;
-   list-style: none;
-   padding-inline-start: 0;
+  background-color: white;
+  margin: 0;
+  list-style: none;
+  padding-inline-start: 0;
 }
 
 .todoList li {
-    display: block;
-    background-color: white;
-    margin:0.06rem 0.06rem 0.15rem 0.06rem;
-    height:3.12rem;
-    border-top: 1px solid gainsboro;
-    padding: 0.31rem 0.31rem;
+  display: block;
+  background-color: white;
+  margin: 0.06rem 0.06rem 0.15rem 0.06rem;
+  height: 3.12rem;
+  border-top: 1px solid gainsboro;
+  padding: 0.31rem 0.31rem;
 }
 
-
 .completed {
-    font-weight: 100;
-    font-size: clamp(1rem, 2vw, 2.5rem);
-    font-family: Arial, Helvetica, sans-serif;
-    color: #949494;
-    text-decoration-line: line-through;
-    background-color: white;
+  font-weight: 100;
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #949494;
+  text-decoration-line: line-through;
+  background-color: white;
 }
 
 .normal {
-    font-weight: 100;
-    font-size: clamp(1rem, 2vw, 2.5rem);
-    font-family: Arial, Helvetica, sans-serif;
-    color: #484848;
-    background-color: white;
+  font-weight: 100;
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #484848;
+  background-color: white;
 }
 
 .todoList li.editing button.delete {
-    display: none !important;
+  display: none !important;
 }
 
-.todoList li:hover button.delete{
-   display: inline-block;
+.todoList li:hover button.delete {
+  display: inline-block;
 }
 
 button.delete {
-    background-color: white;
-    border: none;
-    color: #949494;
-    font-size: 2rem;
-    font-weight: 400;
-    width: 40px;
-    height: 2.5rem;
-    float: right;
-    display: none;
-    transition: color 0.2s ease-out;
+  background-color: white;
+  border: none;
+  color: #949494;
+  font-size: 2rem;
+  font-weight: 400;
+  width: 40px;
+  height: 2.5rem;
+  float: right;
+  display: none;
+  transition: color 0.2s ease-out;
 }
 
 button.delete::after {
-     content: "\2715";
+  content: "\2715";
 }
 
-button.delete:hover{
-    color: #b10f148b;
+button.delete:hover {
+  color: #b10f148b;
 }
 
-button.delete:active{
-    box-shadow: 0 0 3px 2px #4488e1a8;
+button.delete:active {
+  box-shadow: 0 0 3px 2px #4488e1a8;
 }
 
 input.Mycheckbox {
-    display: none;
+  display: none;
 }
 
 span.default {
-     display: inline-block;
-     margin-top: 0.62rem;
-     margin-left: 0.31rem;
-     margin-right: 1.06rem;
-     width: 30px;
-     height: 1.87rem;
-     background-color: white;
-     border: solid grey 1px;
-     border-radius: 50%;
+  display: inline-block;
+  margin-top: 0.62rem;
+  margin-left: 0.31rem;
+  margin-right: 1.06rem;
+  width: 30px;
+  height: 1.87rem;
+  background-color: white;
+  border: solid grey 1px;
+  border-radius: 50%;
 }
 
 span {
-    cursor: default;
+  cursor: default;
 }
 
 span.checked {
-    display: inline-block;
-    margin-top: 0.62rem;
-    margin-left: 0.31rem;
-    margin-right: 1.06rem;
-    width: 30px;
-    height: 1.87rem;
-    background-color: white;
-    border: solid rgba(13, 150, 75, 0.658) 1.5px;
-    border-radius: 50%;
-    text-align: center;
+  display: inline-block;
+  margin-top: 0.62rem;
+  margin-left: 0.31rem;
+  margin-right: 1.06rem;
+  width: 30px;
+  height: 1.87rem;
+  background-color: white;
+  border: solid rgba(13, 150, 75, 0.658) 1.5px;
+  border-radius: 50%;
+  text-align: center;
 }
 
-span.checked::after{
-    content: "\2713";
-    font-size: 25px;
-    color:rgba(13, 150, 75, 0.658);
-    font-weight: 400;
+span.checked::after {
+  content: "\2713";
+  font-size: 25px;
+  color: rgba(13, 150, 75, 0.658);
+  font-weight: 400;
 }
 
 .footer {
-    background-color: white;
-    height:1.25rem;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    padding: 0.62rem 0.93rem;
-    border-top: 1px solid #e6e6e6;
-    display: none;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  height: 1.25rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 0.62rem 0.93rem;
+  border-top: 1px solid #e6e6e6;
+  display: none;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.2),
+    0 8px 0 -3px #f6f6f6,
+    0 9px 1px -3px rgba(0, 0, 0, 0.2),
+    0 16px 0 -6px #f6f6f6,
+    0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 
 .footer button {
-    background-color: white;
-    border: none;
-    cursor: pointer;
+  background-color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.count{
-    float: left;
+.count {
+  float: left;
 }
 
 #clearButton {
-    float: right;
-    visibility: hidden;
+  float: right;
+  visibility: hidden;
 }
 
 #allButton:hover {
-    box-shadow: 0 0 1px 1px #3970e8a8;
+  box-shadow: 0 0 1px 1px #3970e8a8;
 }
 
 #allButton:focus {
-    box-shadow: 0 0 2px 3px #2f52dda8;
+  box-shadow: 0 0 2px 3px #2f52dda8;
 }
 
 #activeButton:hover {
-    box-shadow: 0 0 1px 1px #3970e8a8;
+  box-shadow: 0 0 1px 1px #3970e8a8;
 }
 
 #activeButton:focus {
-    box-shadow: 0 0 2px 3px #2f52dda8;
+  box-shadow: 0 0 2px 3px #2f52dda8;
 }
 
 .filter {
-    box-shadow: 0 0 1px 1px #3970e8a8;
+  box-shadow: 0 0 1px 1px #3970e8a8;
 }
 
 #completedButton:hover {
-    box-shadow: 0 0 1px 1px #3970e8a8;
+  box-shadow: 0 0 1px 1px #3970e8a8;
 }
 
 #completedButton:focus {
-    box-shadow: 0 0 2px 3px #2f52dda8;
+  box-shadow: 0 0 2px 3px #2f52dda8;
 }
 
 #clearButton:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #clearButton:focus {
-    box-shadow: 0 0 1px 2px #2f52dda8;
+  box-shadow: 0 0 1px 2px #2f52dda8;
 }
