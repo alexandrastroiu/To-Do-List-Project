@@ -400,6 +400,7 @@ function createTask(event) {
     newLabel.addEventListener("dblclick", (event) => {
       const label = event.target;
       newSpan.style.visibility = "hidden";
+      newTask.classList.add("editing");
 
       const newInput = document.createElement("input");
       newInput.type = "text";
@@ -414,6 +415,7 @@ function createTask(event) {
           label.textContent = newInput.value;
           newInput.replaceWith(label);
           newSpan.style.visibility = "visible";
+          newTask.classList.remove("editing");
 
           const index = findDataIndex(newTask);
 
@@ -427,6 +429,7 @@ function createTask(event) {
         label.textContent = newInput.value;
         newInput.replaceWith(label);
         newSpan.style.visibility = "visible";
+        newTask.classList.remove("editing");
 
         const index = findDataIndex(newTask);
 
@@ -547,6 +550,7 @@ function displayTasks() {
     newLabel.addEventListener("dblclick", (event) => {
       const label = event.target;
       newSpan.style.visibility = "hidden";
+      newTask.classList.add("editing");
 
       const newInput = document.createElement("input");
       newInput.type = "text";
@@ -561,6 +565,7 @@ function displayTasks() {
           label.textContent = newInput.value;
           newInput.replaceWith(label);
           newSpan.style.visibility = "visible";
+          newTask.classList.remove("editing");
 
           const index = findDataIndex(newTask);
 
@@ -574,6 +579,7 @@ function displayTasks() {
         label.textContent = newInput.value;
         newInput.replaceWith(label);
         newSpan.style.visibility = "visible";
+        newTask.classList.remove("editing");
 
         const index = findDataIndex(newTask);
 
