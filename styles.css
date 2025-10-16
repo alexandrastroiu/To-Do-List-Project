@@ -19,7 +19,7 @@ body {
 
 .section {
   background-color: white;
-  width: 550px;
+  width: clamp(500px, 80vw, 600px);
   min-height: 3.75rem;
   margin: auto;
   display: block;
