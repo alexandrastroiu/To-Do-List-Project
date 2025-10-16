@@ -87,28 +87,48 @@ button {
 }
 
 .todoList li {
-  display: block;
   background-color: white;
   margin: 0.06rem 0.06rem 0.15rem 0.06rem;
-  height: 3.12rem;
+  min-height: 3.12rem;
   border-top: 1px solid gainsboro;
   padding: 0.31rem 0.31rem;
 }
 
+.todoList li > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  width: 100%;
+}
+
+.todolist li > div label {
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
 .completed {
+  flex: 1 1 auto;
+  min-width: 0;
   font-weight: 100;
   font-size: clamp(1rem, 2vw, 2.5rem);
   font-family: Arial, Helvetica, sans-serif;
   color: #949494;
   text-decoration-line: line-through;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   background-color: white;
 }
 
 .normal {
+  flex: 1 1 auto;
   font-weight: 100;
   font-size: clamp(1rem, 2vw, 2.5rem);
   font-family: Arial, Helvetica, sans-serif;
   color: #484848;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   background-color: white;
 }
 
@@ -128,7 +148,8 @@ button.delete {
   font-weight: 400;
   width: 40px;
   height: 2.5rem;
-  float: right;
+  margin-left: 1rem;
+  flex-shrink: 0;
   display: none;
   transition: color 0.2s ease-out;
 }
@@ -151,9 +172,10 @@ input.Mycheckbox {
 
 span.default {
   display: inline-block;
+  flex-shrink: 0;
   margin-top: 0.62rem;
   margin-left: 0.31rem;
-  margin-right: 1.06rem;
+  margin-right: 1rem;
   width: 30px;
   height: 1.87rem;
   background-color: white;
@@ -167,9 +189,10 @@ span {
 
 span.checked {
   display: inline-block;
+  flex-shrink: 0;
   margin-top: 0.62rem;
   margin-left: 0.31rem;
-  margin-right: 1.06rem;
+  margin-right: 1rem;
   width: 30px;
   height: 1.87rem;
   background-color: white;
