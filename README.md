@@ -1,4 +1,4 @@
-# To-Do List Project
+# To-Do List
 
 ## Project Overview
 A dynamic To-Do list: users can add, remove, edit, check and filter tasks.
@@ -30,17 +30,17 @@ The project is inspired by [this site](https://todomvc.com/examples/javascript-e
 1. Clone the repository: 
 
 ```
-git clone https://github.com/alexandrastroiu/To-Do-List-Project.git
+git clone https://github.com/alexandrastroiu/to-do-list.git
 ```
 
 2. Navigate to the project directory:
 
 ```
-cd To-Do-List-Project
+cd to-do-list
 ```
 
 3. Open the html file in your browser.
 
 ## Create your own To-Do list:
 
-[https://alexandrastroiu.github.io/To-Do-List-Project/](https://alexandrastroiu.github.io/To-Do-List-Project/)
+[https://alexandrastroiu.github.io/to-do-list/](https://alexandrastroiu.github.io/to-do-list/)
